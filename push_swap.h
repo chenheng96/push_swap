@@ -6,7 +6,7 @@
 /*   By: cchong <cchong@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 11:33:09 by cchong            #+#    #+#             */
-/*   Updated: 2022/07/14 16:10:16 by cchong           ###   ########.fr       */
+/*   Updated: 2022/09/09 13:56:25 by cchong           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
-typedef struct s_stacks
+typedef struct s_stack
 {
-	struct s_list *a;
-	struct s_list *b;
-}	t_stacks;
+	void	*content;
+	int		index;
+	int		pos;
+	int		target_pos;
+	int		cost_a;
+	int		cost_b;
+	struct s_stack	*next;
+}	t_stack;
 
 void	quicksort(int *arr, int first, int last);
 void	insertionsort(int *arr, int n);
